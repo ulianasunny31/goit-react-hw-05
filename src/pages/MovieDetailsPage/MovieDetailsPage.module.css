@@ -1,0 +1,48 @@
+.movieDetailsDiv {
+  color: black;
+  padding: 40px;
+  display: flex;
+  gap: 50px;
+}
+
+.movieDetailsDiv img {
+  width: 300px;
+  height: 450px;
+}
+
+.genresList {
+  list-style: none;
+  gap: 10px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.genresList li {
+  background-color: #7533ae;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.overviewP {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.overviewP > span {
+  font-weight: 300;
+  margin-bottom: 15px;
+  max-width: 600px;
+}
+
+.ratingP {
+  font-weight: 700;
+}
+
+.ratingP > span {
+  font-weight: 300;
+}
