@@ -1,5 +1,7 @@
+import css from './MovieReviews.module.css';
+
 const MovieReviews = () => {
-  return <div>MovieReviews</div>;
+  return <div className={css.reviewsDiv}> Reviews</div>;
 };
 
 export default MovieReviews;

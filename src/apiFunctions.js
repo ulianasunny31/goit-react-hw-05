@@ -23,9 +23,15 @@ export async function getMovieById(movieId) {
   return data;
 }
 
-export async function getMovieReviews(movieId) {}
+export async function getMovieReviews(movieId) {
+  const { data } = await request.get(`/movie/${movieId}/reviews`);
+  return data;
+}
 
-export async function getMovieCast(movieId) {}
+export async function getMovieCast(movieId) {
+  const { data } = await request.get(`/movie/${movieId}/credits`);
+  return data;
+}
 
 // async function getMovieByQuery() {
 //   //

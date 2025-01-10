@@ -1,0 +1,33 @@
+.castList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.castList li {
+  display: flex;
+  gap: 15px;
+  width: 250px;
+}
+
+.castList img {
+  width: 90px;
+  height: 120px;
+}
+
+.imageDiv {
+  width: 90px;
+  height: 120px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.castList p {
+  color: black;
+  font-size: 17px;
+}
