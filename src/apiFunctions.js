@@ -33,6 +33,11 @@ export async function getMovieCast(movieId) {
   return data;
 }
 
-// async function getMovieByQuery() {
-//   //
-// }
+export async function getMovieByQuery(movie) {
+  const { data } = await request.get('/search/movie', {
+    params: {
+      query: movie,
+    },
+  });
+  return data;
+}

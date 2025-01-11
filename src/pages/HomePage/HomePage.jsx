@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from '../../apiFunctions';
 import css from './HomePage.module.css';
-import { Link } from 'react-router-dom';
+import MoviesList from '../../components/MoviesList/MoviesList';
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -20,23 +20,7 @@ const HomePage = () => {
   return (
     <div className={css.homePage}>
       <h1>Trending this week</h1>
-      <ul className={css.movieList}>
-        {trendingMovies.map((item) => {
-          return (
-            <Link
-              to={`movies/${item.id}`}
-              className={css.movieItem}
-              key={item.id}
-            >
-              <img
-                className={css.trendMovieImg}
-                src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
-              />
-              {item.title}
-            </Link>
-          );
-        })}
-      </ul>
+      <MoviesList movies={trendingMovies} />
     </div>
   );
 };

@@ -1,0 +1,42 @@
+.movieList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 500px;
+}
+
+.movieItem {
+  background-color: #d7c6fd;
+  padding: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px;
+  max-height: 90px;
+  cursor: pointer;
+  color: #000;
+  font-size: 17px;
+}
+
+.movieItem:hover {
+  background-color: #c8b6f2;
+  color: #000;
+}
+
+.trendMovieImg {
+  width: 70px;
+  height: 85px;
+}
+
+.imageDiv {
+  width: 70px;
+  height: 85px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}

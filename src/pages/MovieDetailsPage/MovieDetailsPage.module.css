@@ -46,3 +46,38 @@
 .ratingP > span {
   font-weight: 300;
 }
+
+.movieNav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-left: 50px;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+.movieLink {
+  border: 1px solid rgb(157, 120, 180);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.movieLink:hover {
+  color: rgb(134, 65, 166);
+}
+
+.goBack {
+  color: #000;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.movieDiv {
+  padding-top: 20px;
+}
+
+.goBack:hover {
+  color: rgb(134, 65, 166);
+}

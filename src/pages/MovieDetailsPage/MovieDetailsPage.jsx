@@ -1,10 +1,14 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import css from './MovieDetailsPage.module.css';
 import { getMovieById } from '../../apiFunctions';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Loader from '../../components/Loader/Loader';
 
 const MovieDetailsPage = () => {
+  const location = useLocation();
+
+  const gobackPlace = useRef(location.state);
+
   const [movie, setMovie] = useState();
   const { movieId } = useParams();
 
@@ -28,7 +32,9 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={css.movieDiv}>
-      <Link>Go Back</Link>
+      <Link to={gobackPlace.current} className={css.goBack}>
+        Go Back
+      </Link>
       <div className={css.movieDetailsDiv}>
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
         <div className={css.movieSmallInfo}>
@@ -49,11 +55,15 @@ const MovieDetailsPage = () => {
       <nav className={css.movieNav}>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link className={css.movieLink} to="cast">
+              Cast
+            </Link>
           </li>
 
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link className={css.movieLink} to="reviews">
+              Reviews
+            </Link>
           </li>
         </ul>
       </nav>
