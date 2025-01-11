@@ -1,6 +1,7 @@
 .movieList {
   list-style: none;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
   height: 500px;

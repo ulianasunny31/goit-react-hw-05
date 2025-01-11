@@ -1,26 +1,12 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './MovieReviews.module.css';
 import { getMovieReviews } from '../../apiFunctions';
 import Loader from '../Loader/Loader';
+import { useFetch } from '../../hooks/useFetch';
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    if (!movieId) return;
-    const fetchReviews = async () => {
-      try {
-        const { results } = await getMovieReviews(movieId);
-        setReviews(results);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    fetchReviews();
-  }, [movieId]);
+  const [reviews] = useFetch(getMovieReviews, movieId);
 
   if (!reviews) {
     return <Loader />;
@@ -41,7 +27,7 @@ const MovieReviews = () => {
 
   return (
     <div className={css.reviewsDiv}>
-      {!reviews ? (
+      {reviews ? (
         <ul className={css.reviewsList}>
           {reviews.map((item) => {
             return (

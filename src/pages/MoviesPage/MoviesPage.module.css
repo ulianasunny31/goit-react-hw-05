@@ -1,0 +1,30 @@
+.formDiv {
+  padding-top: 30px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btnSubmit {
+  height: 40px;
+  width: 80px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+}
+
+.input {
+  height: 30px;
+  width: 250px;
+  border: none;
+  background-color: rgb(229, 227, 244);
+  color: black;
+  padding: 5px;
+  font-size: 16px;
+}

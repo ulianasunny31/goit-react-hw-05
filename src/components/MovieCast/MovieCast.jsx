@@ -1,26 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from '../../apiFunctions';
 import css from './MovieCast.module.css';
-import { useEffect, useState } from 'react';
 import Loader from '../Loader/Loader';
+import { useFetch } from '../../hooks/useFetch';
 
 const MovieCast = () => {
   const { movieId } = useParams();
-  const [cast, setCast] = useState([]);
-
-  useEffect(() => {
-    if (!movieId) return;
-    const fetchCast = async () => {
-      try {
-        const { cast } = await getMovieCast(movieId);
-        setCast(cast);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchCast();
-  }, [movieId]);
+  const [cast] = useFetch(getMovieCast, movieId);
 
   if (!cast) {
     return <Loader />;

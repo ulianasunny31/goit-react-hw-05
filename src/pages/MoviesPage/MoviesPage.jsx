@@ -1,30 +1,16 @@
 import { Formik, Form, Field } from 'formik';
 import css from './MoviesPage.module.css';
-import { useEffect, useState } from 'react';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from '../../apiFunctions';
+import { useFetch } from '../../hooks/useFetch';
 
 const MoviesPage = () => {
   const [searchParams, setSearchparams] = useSearchParams();
-  const [movies, setMovies] = useState([]);
 
   const query = searchParams.get('query') || '';
 
-  useEffect(() => {
-    if (!query) return;
-
-    const fetchByQuery = async () => {
-      try {
-        const { results } = await getMovieByQuery(query);
-        setMovies(results);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    fetchByQuery();
-  }, [query]);
+  const [movies] = useFetch(getMovieByQuery, query);
 
   const initialValues = {
     query,
@@ -36,11 +22,13 @@ const MoviesPage = () => {
   }
 
   return (
-    <div className={css.moviesPageDiv}>
+    <div className={css.formDiv}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <Field type="text" name="query" />
-          <button type="submit">Search</button>
+        <Form className={css.form}>
+          <Field type="text" name="query" className={css.input} />
+          <button className={css.btnSubmit} type="submit">
+            SEARCH
+          </button>
         </Form>
       </Formik>
 
