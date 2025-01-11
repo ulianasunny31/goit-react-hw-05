@@ -7,6 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 const MovieReviews = () => {
   const { movieId } = useParams();
   const [reviews] = useFetch(getMovieReviews, movieId);
+  console.log(reviews);
 
   if (!reviews) {
     return <Loader />;
@@ -27,7 +28,7 @@ const MovieReviews = () => {
 
   return (
     <div className={css.reviewsDiv}>
-      {reviews ? (
+      {reviews.length > 0 ? (
         <ul className={css.reviewsList}>
           {reviews.map((item) => {
             return (
