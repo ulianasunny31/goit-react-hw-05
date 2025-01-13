@@ -7,7 +7,6 @@ import { useFetch } from '../../hooks/useFetch';
 const MovieReviews = () => {
   const { movieId } = useParams();
   const [reviews] = useFetch(getMovieReviews, movieId);
-  console.log(reviews);
 
   if (!reviews) {
     return <Loader />;
