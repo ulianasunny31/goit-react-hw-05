@@ -1,6 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import css from './MoviesPage.module.css';
-import MoviesList from '../../components/MovieList/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from '../../apiFunctions';
 import { useFetch } from '../../hooks/useFetch';
