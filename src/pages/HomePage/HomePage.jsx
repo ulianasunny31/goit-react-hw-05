@@ -1,6 +1,6 @@
 import { getTrendingMovies } from '../../apiFunctions';
 import css from './HomePage.module.css';
-import MoviesList from '../../components/MoviesList/MoviesList';
+import MoviesList from '../../components/MovieList/MovieList';
 import { useFetch } from '../../hooks/useFetch';
 
 const HomePage = () => {
