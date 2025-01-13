@@ -1,6 +1,6 @@
 import { getTrendingMovies } from '../../apiFunctions';
 import css from './HomePage.module.css';
-import MoviesList from '../../components/MovieList/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import { useFetch } from '../../hooks/useFetch';
 
 const HomePage = () => {
@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div className={css.homePage}>
       <h1>Trending this week</h1>
-      <MoviesList movies={trendingMovies} />
+      <MovieList movies={trendingMovies} />
     </div>
   );
 };

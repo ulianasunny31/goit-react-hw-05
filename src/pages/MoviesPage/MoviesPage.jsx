@@ -32,7 +32,7 @@ const MoviesPage = () => {
         </Form>
       </Formik>
 
-      <MoviesList movies={movies} />
+      <MovieList movies={movies} />
     </div>
   );
 };
